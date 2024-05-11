@@ -104,26 +104,23 @@
                 <div class="row gy-4">
 
                   <div class="col-md-12 ">
-                    <input type="email" class="form-control" name="email" placeholder="Correo" required="">
+                    <input id="email" type="email" class="form-control" name="email" placeholder="Correo" required="">
                   </div>
 
                   <div class="col-md-12">
-                    <input type="password" class="form-control" name="subject" placeholder="Contraseña" required="">
+                    <input id="password" type="password" class="form-control" name="subject" placeholder="Contraseña" required="">
                   </div>
 
 
                   <div class="col-md-12">
-                    <input type="password" class="form-control" name="subject" placeholder="Token" required="">
+                    <input id="token" type="password" class="form-control" name="subject" placeholder="Token" required="">
                   </div>
 
 
                   <div class="col-md-12 text-center">
-                    <a href="home-inventario.html">
-                      <button  style="width: 40%; color: var(--contrast-color);
+                      <button id="loginButton" style="width: 40%; color: var(--contrast-color);
                       background: var(--accent-color);
-                      border:none; padding: 0.5rem;" type="submit">Ingresar</button>
-                    </a>
-                    
+                      border:none; padding: 0.5rem;" type="button">Ingresar</button>
                   </div>
                 </div>
              
@@ -153,6 +150,21 @@
 
     <!-- Main JS File -->
     <script src="assets/js/main.js"></script>
+    <script>
+      document.getElementById("loginButton").addEventListener("click", function() {
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+
+        // Validación de usuario y contraseña
+        if (email === "admin" && password === "admin") {
+          window.location.href = "home-admin.html";
+        } else if (email === "user" && password === "user") {
+          window.location.href = "home-inventario.html";
+        } else {
+          alert("Usuario o contraseña incorrectos");
+        }
+      });
+    </script>
 
 </body>
 
