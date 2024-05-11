@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Admin Home</title>
+  <title>Starter Page - Day Bootstrap Template</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -58,15 +58,15 @@
     <div class="branding d-flex align-items-center">
 
       <div class="container position-relative d-flex align-items-center justify-content-between">
-        <a href="home-admin.html" class="logo d-flex align-items-center">
+        <a href="index.html" class="logo d-flex align-items-center">
           <!-- Uncomment the line below if you also wish to use an image logo -->
           <!-- <img src="assets/img/logo.png" alt=""> -->
-          <h1 class="sitename">Maestranzas Unidos</h1>
+          <h1 class="sitename">Day</h1>
         </a>
 
         <nav id="navmenu" class="navmenu">
           <ul>
-            <li><a href="opciones-admin.html" class="">Opciones</a></li>
+            <li><a href="opciones.html" class="">Opciones</a></li>
             <li><a href="#hero" class="" onclick="alertar('Cerrando Sesion en Todos Los Dispositivos')">Cerrar Sesion</a></li>
             <script type="text/javascript">
                 function alertar(texto) {
@@ -74,7 +74,7 @@
                    location.href = "login.html";
                 }
             </script>
-            
+         
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
@@ -91,11 +91,11 @@
       <div class="container">
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="home-admin.html">Home</a></li>
-            <li class="current">Admin Home</li>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Starter Page</li>
           </ol>
         </nav>
-        <h1>Admin Home</h1>
+        <h1>Starter Page</h1>
       </div>
     </div><!-- End Page Title -->
 
@@ -103,31 +103,25 @@
     <section id="starter-section" class="starter-section section">
 
       <!-- Section Title -->
-      
+      <div class="container section-title" data-aos="fade-up">
+        <span class="">Opciones<br></span>
+        <h2>Opciones</h2>
+
+      </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up">
-        <section id="team" class="team section">
-
-          <!-- Section Title -->
-          <div class="container section-title" data-aos="fade-up">
+        <a href="dispositivos.html" title="More Details" class="details-link">
+          <button style=" color: var(--contrast-color);
+          background: var(--accent-color);
+          border:none; padding: 1rem;">Administrar Dispositivos</button>
+        </a>
+         
+        <a href="" title="More Details" class="details-link">
+          <button style=" color: var(--contrast-color);
+          background: var(--accent-color);
+          border:none; padding: 1rem;">Ingresar Horario de Mantenimiento Automatico <input type="time" id="appt" name="appt" min="09.00" max="18:00" required/> </button>
         
-            <a href="lista-usuarios.html" title="More Details" class="details-link">
-              <button style=" color: var(--contrast-color);
-              background: var(--accent-color);
-              border:none; padding: 1rem;">Lista de Usuarios</button>
-            </a>
-          </div><!-- End Section Title -->
-
-          <div class="container">
-  
-            <div class="row">
-        
-              
-            </div>
-    
-          </div>
-    
-        </section><!-- /Team Section -->
+               
       </div>
 
     </section><!-- /Starter Section Section -->
@@ -142,10 +136,10 @@
           <div class="footer-about">
             <a href="index.html" class="logo sitename">Maestranzas Unidos</a>
             <div class="footer-contact pt-3">
-              <p>Avenida Siempreviva 742</p>
-              <p>Springfield, USA</p>
-              <p class="mt-3"><strong>Teléfono:</strong> <span>+1 5589 55488 55</span></p>
-              <p><strong>Correo:</strong> <span>info@example.com</span></p>
+              <p>A108 Adam Street</p>
+              <p>New York, NY 535022</p>
+              <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
+              <p><strong>Email:</strong> <span>info@example.com</span></p>
             </div>
             <div class="social-links d-flex mt-4">
               <a href=""><i class="bi bi-twitter"></i></a>
@@ -193,7 +187,7 @@
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Maestranzas Unidos</strong> <span>Todos los derechos reservados</span></p>
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Day</strong> <span>All Rights Reserved</span></p>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you've purchased the pro version. -->
