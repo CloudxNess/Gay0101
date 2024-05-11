@@ -1460,6 +1460,7 @@ section,
   font-weight: 700;
   margin-bottom: 2px;
   font-size: 18px;
+  text-align: start;
 }
 
 .team .member span {
@@ -1467,6 +1468,7 @@ section,
   display: block;
   font-size: 13px;
   color: color-mix(in srgb, var(--default-color), transparent 20%);
+  text-align: start;
 }
 
 .team .member p {
@@ -1474,6 +1476,7 @@ section,
   font-size: 14px;
   font-style: italic;
   color: color-mix(in srgb, var(--default-color), transparent 40%);
+  text-align: start;
 }
 
 .team .member .social {
