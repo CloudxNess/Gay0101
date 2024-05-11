@@ -160,9 +160,14 @@
           window.location.href = "home-admin.html";
         } else if (email === "user" && password === "user" && token === "123") {
           window.location.href = "home-inventario.html";
-        } else {
+        } else if (email === "jefe" && password === "jefe" && token === "123") {
+          window.location.href = "home-kits.html";
+        } 
+        else {
           alert("Usuario / Contraseña / Token incorrectos");
         }
+        
+        
       });
     </script>
 
