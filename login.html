@@ -154,14 +154,14 @@
       document.getElementById("loginButton").addEventListener("click", function() {
         var email = document.getElementById("email").value;
         var password = document.getElementById("password").value;
-
+        var token = document.getElementById("token").value;
         // Validación de usuario y contraseña
-        if (email === "admin" && password === "admin") {
+        if (email === "admin" && password === "admin" && token === "123") {
           window.location.href = "home-admin.html";
-        } else if (email === "user" && password === "user") {
+        } else if (email === "user" && password === "user" && token === "123") {
           window.location.href = "home-inventario.html";
         } else {
-          alert("Usuario o contraseña incorrectos");
+          alert("Usuario / Contraseña / Token incorrectos");
         }
       });
     </script>
