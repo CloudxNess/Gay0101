@@ -120,7 +120,7 @@
               <h7><strong>Fecha de Ingreso: </strong>3 Abril 2024</h7>
             </div>
             <div class="col-2">
-              <a href="#" title="More Details" class="details-link">
+              <a href="#" title="More Details" class="" onclick="alertar('Revocando Permisos')">
                 <button style=" color: var(--contrast-color);
                 background: var(--accent-color);
                 border:none; padding: 1rem;">Revocar</button>
@@ -136,10 +136,19 @@
               <h7><strong>Fecha de Ingreso: </strong> 14 junio 2023</h7>
             </div>
             <div class="col-2">
-              <a href="#" title="More Details" class="details-link">
+              <a href="#" title="More Details" class="" onclick="alertar('Revocando Permisos')">
                 <button style=" color: var(--contrast-color);
                 background: var(--accent-color);
                 border:none; padding: 1rem;">Revocar</button>
+
+
+              <script type="text/javascript">
+                function alertar(texto) {
+                  alert(texto);
+                      ;
+                    }
+                  </script>
+
               </a>
             </div>
           </div>
