@@ -27,7 +27,10 @@
 
   <link rel="stylesheet" href="assets/css/magnify.css">
  
-
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <!-- SweetAlert2 JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
@@ -87,6 +90,8 @@
                     location.href = "login.html";
                  }
              </script>
+              <li><a href="carro-compra-cliente.html" class=""><strong>Carrito De Compra </strong><i class="bi bi-cart-fill"></i></a></li>
+
           </ul>
           
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -119,11 +124,18 @@
 
       <!-- Section Title -->
       
-      <form class="form-inline my-2 my-lg-0" style="text-align: center;">
-        <input style="width: 40%; margin: auto;"  class="form-control mr-sm-2" type="search" placeholder="Buscar Producto" aria-label="Search">
-        <br>
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-      </form>
+      <div class="form-container">
+        <form class="form-inline my-2 my-lg-0" style="text-align: center;">
+          <input id="product-search" class="form-control mr-sm-2" style="width: 40%; margin: auto;" type="search" placeholder="Buscar Producto" aria-label="Search">
+          <div id="autocomplete-container" class="autocomplete-suggestions"></div>
+          <div class="btn-container">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+          </div>
+        </form>
+        
+      </div>
+      
+      
       <div class="container" data-aos="fade-up">
         <section id="team" class="team section">
 
@@ -133,11 +145,7 @@
             <h2>Productos</h2>
             <br>
             <br>
-            <a href="agregar-producto.html" title="More Details" class="details-link">
-              <button style=" color: var(--contrast-color);
-              background: var(--accent-color);
-              border:none; padding: 1rem;">+ Añadir Producto al Inventario</button>
-            </a>
+            
           </div><!-- End Section Title -->
 
           <div class="container">
@@ -148,16 +156,32 @@
                 <div class="member">
                   <img src="assets/img/tuerca_remachable.jpg" style="border-radius: 0%;" class="zoom" data-magnify-src="assets/img/tuerca_remachable.jpg">
                   <div class="member-content">
-                    <h4 style=>Producto</h4>
+                    <h4>Producto</h4>
                     <span>Web Development</span>
                     <p>
-                      Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
+                      Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut.
                     </p>
                     <div class="social">
-                      <a href="detalle-producto.html" title="More Details" class="details-link">
-                        <button style="width: 40%; color: var(--contrast-color);
-                        background: var(--accent-color);
-                        border:none; padding: 0.5rem;">Agregar Al Carrito</button>
+                      <a href="#" title="More Details" class="details-link">
+                        <button style="width: 40%; color: var(--contrast-color); background: var(--accent-color); border:none; padding: 0.5rem;" onclick="agregarAlCarrito()">Agregar Al Carrito</button>
+                      </a>  
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
+                <div class="member">
+                  <img src="assets/img/tuerca_remachable.jpg" style="border-radius: 0%;" class="zoom" data-magnify-src="assets/img/tuerca_remachable.jpg">
+                  <div class="member-content">
+                    <h4>Producto</h4>
+                    <span>Web Development</span>
+                    <p>
+                      Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut.
+                    </p>
+                    <div class="social">
+                      <a href="#" title="More Details" class="details-link">
+                        <button style="width: 40%; color: var(--contrast-color); background: var(--accent-color); border:none; padding: 0.5rem;" onclick="agregarAlCarrito()">Agregar Al Carrito</button>
                       </a>  
                     </div>
                   </div>
@@ -165,18 +189,16 @@
               </div>
               <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
                 <div class="member">
-                  <img src="assets/img/tuerca_remachable.jpg" style="border-radius: 0%;" alt="">
+                  <img src="assets/img/tuerca_remachable.jpg" style="border-radius: 0%;" class="zoom" data-magnify-src="assets/img/tuerca_remachable.jpg">
                   <div class="member-content">
-                    <h4 style=>Producto</h4>
+                    <h4>Producto</h4>
                     <span>Web Development</span>
                     <p>
-                      Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
+                      Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut.
                     </p>
                     <div class="social">
-                      <a href="detalle-producto.html" title="More Details" class="details-link">
-                        <button style="width: 40%; color: var(--contrast-color);
-                        background: var(--accent-color);
-                        border:none; padding: 0.5rem;">Agregar Al Carrito</button>
+                      <a href="#" title="More Details" class="details-link">
+                        <button style="width: 40%; color: var(--contrast-color); background: var(--accent-color); border:none; padding: 0.5rem;" onclick="agregarAlCarrito()">Agregar Al Carrito</button>
                       </a>  
                     </div>
                   </div>
@@ -184,18 +206,16 @@
               </div>
               <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
                 <div class="member">
-                  <img src="assets/img/tuerca_remachable.jpg" style="border-radius: 0%;" alt="">
+                  <img src="assets/img/tuerca_remachable.jpg" style="border-radius: 0%;" class="zoom" data-magnify-src="assets/img/tuerca_remachable.jpg">
                   <div class="member-content">
-                    <h4 style=>Producto</h4>
+                    <h4>Producto</h4>
                     <span>Web Development</span>
                     <p>
-                      Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
+                      Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut.
                     </p>
                     <div class="social">
-                      <a href="detalle-producto.html" title="More Details" class="details-link">
-                        <button style="width: 40%; color: var(--contrast-color);
-                        background: var(--accent-color);
-                        border:none; padding: 0.5rem;">Agregar Al Carrito</button>
+                      <a href="#" title="More Details" class="details-link">
+                        <button style="width: 40%; color: var(--contrast-color); background: var(--accent-color); border:none; padding: 0.5rem;" onclick="agregarAlCarrito()">Agregar Al Carrito</button>
                       </a>  
                     </div>
                   </div>
@@ -203,18 +223,16 @@
               </div>
               <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
                 <div class="member">
-                  <img src="assets/img/tuerca_remachable.jpg" style="border-radius: 0%;" alt="">
+                  <img src="assets/img/tuerca_remachable.jpg" style="border-radius: 0%;" class="zoom" data-magnify-src="assets/img/tuerca_remachable.jpg">
                   <div class="member-content">
-                    <h4 style=>Producto</h4>
+                    <h4>Producto</h4>
                     <span>Web Development</span>
                     <p>
-                      Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
+                      Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut.
                     </p>
                     <div class="social">
-                      <a href="detalle-producto.html" title="More Details" class="details-link">
-                        <button style="width: 40%; color: var(--contrast-color);
-                        background: var(--accent-color);
-                        border:none; padding: 0.5rem;">Agregar Al Carrito</button>
+                      <a href="#" title="More Details" class="details-link">
+                        <button style="width: 40%; color: var(--contrast-color); background: var(--accent-color); border:none; padding: 0.5rem;" onclick="agregarAlCarrito()">Agregar Al Carrito</button>
                       </a>  
                     </div>
                   </div>
@@ -222,18 +240,16 @@
               </div>
               <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
                 <div class="member">
-                  <img src="assets/img/tuerca_remachable.jpg" style="border-radius: 0%;" alt="">
+                  <img src="assets/img/tuerca_remachable.jpg" style="border-radius: 0%;" class="zoom" data-magnify-src="assets/img/tuerca_remachable.jpg">
                   <div class="member-content">
-                    <h4 style=>Producto</h4>
+                    <h4>Producto</h4>
                     <span>Web Development</span>
                     <p>
-                      Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
+                      Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut.
                     </p>
                     <div class="social">
-                      <a href="detalle-producto.html" title="More Details" class="details-link">
-                        <button style="width: 40%; color: var(--contrast-color);
-                        background: var(--accent-color);
-                        border:none; padding: 0.5rem;">Agregar Al Carrito</button>
+                      <a href="#" title="More Details" class="details-link">
+                        <button style="width: 40%; color: var(--contrast-color); background: var(--accent-color); border:none; padding: 0.5rem;" onclick="agregarAlCarrito()">Agregar Al Carrito</button>
                       </a>  
                     </div>
                   </div>
@@ -241,18 +257,16 @@
               </div>
               <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
                 <div class="member">
-                  <img src="assets/img/tuerca_remachable.jpg" style="border-radius: 0%;" alt="">
+                  <img src="assets/img/tuerca_remachable.jpg" style="border-radius: 0%;" class="zoom" data-magnify-src="assets/img/tuerca_remachable.jpg">
                   <div class="member-content">
-                    <h4 style=>Producto</h4>
+                    <h4>Producto</h4>
                     <span>Web Development</span>
                     <p>
-                      Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
+                      Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut.
                     </p>
                     <div class="social">
-                      <a href="detalle-producto.html" title="More Details" class="details-link">
-                        <button style="width: 40%; color: var(--contrast-color);
-                        background: var(--accent-color);
-                        border:none; padding: 0.5rem;">Agregar Al Carrito</button>
+                      <a href="#" title="More Details" class="details-link">
+                        <button style="width: 40%; color: var(--contrast-color); background: var(--accent-color); border:none; padding: 0.5rem;" onclick="agregarAlCarrito()">Agregar Al Carrito</button>
                       </a>  
                     </div>
                   </div>
@@ -260,18 +274,16 @@
               </div>
               <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
                 <div class="member">
-                  <img src="assets/img/tuerca_remachable.jpg" style="border-radius: 0%;" alt="">
+                  <img src="assets/img/tuerca_remachable.jpg" style="border-radius: 0%;" class="zoom" data-magnify-src="assets/img/tuerca_remachable.jpg">
                   <div class="member-content">
-                    <h4 style=>Producto</h4>
+                    <h4>Producto</h4>
                     <span>Web Development</span>
                     <p>
-                      Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
+                      Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut.
                     </p>
                     <div class="social">
-                      <a href="detalle-producto.html" title="More Details" class="details-link">
-                        <button style="width: 40%; color: var(--contrast-color);
-                        background: var(--accent-color);
-                        border:none; padding: 0.5rem;">Agregar Al Carrito</button>
+                      <a href="#" title="More Details" class="details-link">
+                        <button style="width: 40%; color: var(--contrast-color); background: var(--accent-color); border:none; padding: 0.5rem;" onclick="agregarAlCarrito()">Agregar Al Carrito</button>
                       </a>  
                     </div>
                   </div>
@@ -279,118 +291,22 @@
               </div>
               <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
                 <div class="member">
-                  <img src="assets/img/tuerca_remachable.jpg" style="border-radius: 0%;" alt="">
+                  <img src="assets/img/tuerca_remachable.jpg" style="border-radius: 0%;" class="zoom" data-magnify-src="assets/img/tuerca_remachable.jpg">
                   <div class="member-content">
-                    <h4 style=>Producto</h4>
+                    <h4>Producto</h4>
                     <span>Web Development</span>
                     <p>
-                      Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
+                      Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut.
                     </p>
                     <div class="social">
-                      <a href="detalle-producto.html" title="More Details" class="details-link">
-                        <button style="width: 40%; color: var(--contrast-color);
-                        background: var(--accent-color);
-                        border:none; padding: 0.5rem;">Agregar Al Carrito</button>
+                      <a href="#" title="More Details" class="details-link">
+                        <button style="width: 40%; color: var(--contrast-color); background: var(--accent-color); border:none; padding: 0.5rem;" onclick="agregarAlCarrito()">Agregar Al Carrito</button>
                       </a>  
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-                <div class="member">
-                  <img src="assets/img/tuerca_remachable.jpg" style="border-radius: 0%;" alt="">
-                  <div class="member-content">
-                    <h4 style=>Producto</h4>
-                    <span>Web Development</span>
-                    <p>
-                      Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
-                    </p>
-                    <div class="social">
-                      <a href="detalle-producto.html" title="More Details" class="details-link">
-                        <button style="width: 40%; color: var(--contrast-color);
-                        background: var(--accent-color);
-                        border:none; padding: 0.5rem;">Agregar Al Carrito</button>
-                      </a>  
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-                <div class="member">
-                  <img src="assets/img/tuerca_remachable.jpg" style="border-radius: 0%;" alt="">
-                  <div class="member-content">
-                    <h4 style=>Producto</h4>
-                    <span>Web Development</span>
-                    <p>
-                      Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
-                    </p>
-                    <div class="social">
-                      <a href="detalle-producto.html" title="More Details" class="details-link">
-                        <button style="width: 40%; color: var(--contrast-color);
-                        background: var(--accent-color);
-                        border:none; padding: 0.5rem;">Agregar Al Carrito</button>
-                      </a>  
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-                <div class="member">
-                  <img src="assets/img/tuerca_remachable.jpg" style="border-radius: 0%;" alt="">
-                  <div class="member-content">
-                    <h4 style=>Producto</h4>
-                    <span>Web Development</span>
-                    <p>
-                      Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
-                    </p>
-                    <div class="social">
-                      <a href="detalle-producto.html" title="More Details" class="details-link">
-                        <button style="width: 40%; color: var(--contrast-color);
-                        background: var(--accent-color);
-                        border:none; padding: 0.5rem;">Agregar Al Carrito</button>
-                      </a>  
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-                <div class="member">
-                  <img src="assets/img/tuerca_remachable.jpg" style="border-radius: 0%;" alt="">
-                  <div class="member-content">
-                    <h4 style=>Producto</h4>
-                    <span>Web Development</span>
-                    <p>
-                      Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
-                    </p>
-                    <div class="social">
-                      <a href="detalle-producto.html" title="More Details" class="details-link">
-                        <button style="width: 40%; color: var(--contrast-color);
-                        background: var(--accent-color);
-                        border:none; padding: 0.5rem;">Agregar Al Carrito</button>
-                      </a>  
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-                <div class="member">
-                  <img src="assets/img/tuerca_remachable.jpg" style="border-radius: 0%;" alt="">
-                  <div class="member-content">
-                    <h4 style=>Producto</h4>
-                    <span>Web Development</span>
-                    <p>
-                      Magni qui quod omnis unde et eos fuga et exercitationem. Odio veritatis perspiciatis quaerat qui aut aut aut
-                    </p>
-                    <div class="social">
-                      <a href="detalle-producto.html" title="More Details" class="details-link">
-                        <button style="width: 40%; color: var(--contrast-color);
-                        background: var(--accent-color);
-                        border:none; padding: 0.5rem;">Agregar Al Carrito</button>
-                      </a>  
-                    </div>
-                  </div>
-                </div>
-              </div>
+                                                                                                                
               <!-- End Producto -->
               
             </div>
@@ -503,8 +419,50 @@
     $(document).ready(function() {
       $('.zoom').magnify();
     });
-    </script>
+   
+  
+    function agregarAlCarrito() {
+      Swal.fire({
+        title: 'Producto agregado al carrito exitosamente',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      });
+    }
 
+    $(document).ready(function() {
+    const productos = [
+      { nombre: 'Producto 1', imagen: 'assets/img/tuerca_remachable.jpg' },
+      { nombre: 'Producto 2', imagen: 'assets/img/tuerca_remachable.jpg' },
+      { nombre: 'Producto 3', imagen: 'ruta_a_la_imagen_3.jpg' }
+      // Añadir más productos aquí
+    ];
+
+    $('#product-search').on('input', function() {
+      const searchTerm = $(this).val().toLowerCase();
+      $('#autocomplete-container').empty();
+
+      if (searchTerm.length > 0) {
+        const filteredProducts = productos.filter(producto => 
+          producto.nombre.toLowerCase().includes(searchTerm)
+        );
+
+        filteredProducts.forEach(producto => {
+          $('#autocomplete-container').append(`
+            <div class="autocomplete-suggestion" onclick="selectProduct('${producto.nombre}')">
+              <img src="${producto.imagen}" alt="${producto.nombre}">
+              <span>${producto.nombre}</span>
+            </div>
+          `);
+        });
+      }
+    });
+  });
+
+  function selectProduct(nombre) {
+    $('#product-search').val(nombre);
+    $('#autocomplete-container').empty();
+  }
+  </script>
 
 </body>
 
