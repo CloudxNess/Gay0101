@@ -67,13 +67,26 @@
     
             <nav id="navmenu" class="navmenu">
               <ul>
+                <div class="dropdown">
+                  <button class="btn btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                   Menu Comprador
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="anadir-proveedor.html">Añadir Proveedor</a></li>
+                    <li><a class="dropdown-item" href="comprador-historial.html">Historial Transacciones</a></li>
+                    <li><a class="dropdown-item" href="solicitud-materiales-inventario.html">Solicitud de Materiales</a></li>
+                    <li><a class="dropdown-item" href="ordenes-compra.html">Generar OC</a></li>
+                    
+                  </ul>
+                </div>
           
                 <li><a href="opciones.html" class="">Opciones</a></li>
                 <li><a href="" class=""><strong>Versión Móvil</strong> </a></li>
                 <li><a href="" class=""><strong>English</strong> </a></li>
+
     
     
-                <li><a href="historial-cliente.html" class="">Historial de Transacciones</a></li>
+                
                  <i class="bi bi-search d-flex align-items-center ms-2"><a href="assets/img/lupa.png">Activar Zoom </a></i>
                  <li><a href="#hero" class="" onclick="alertar('Cerrando Sesion en Todos Los Dispositivos')">Cerrar Sesion</a></li>
                  <script type="text/javascript">
@@ -82,6 +95,7 @@
                         location.href = "login.html";
                      }
                  </script>
+
               </ul>
               
               <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -129,27 +143,8 @@
         </form>
         <div class="container" data-aos="fade-up">
           <section id="team" class="team section">
-            <div class="container">
-              <a href="anadir-proveedor.html" title="More Details" class="details-link">
-                <button style=" color: var(--contrast-color);
-                background: var(--accent-color);
-                border:none; padding: 1rem;">+ Añadir Proveedores</button>
-              </a>
-            </div>
-            <div class="container">
-              <a href="comprador-historial.html" title="More Details" class="details-link">
-                <button style=" color: var(--contrast-color);
-                background: var(--accent-color);
-                border:none; padding: 1rem;">+ Historial de Transacciones</button>
-              </a>
-            </div>
-            <div class="container">
-              <a href="#" title="More Details" class="details-link">
-                <button style=" color: var(--contrast-color);
-                background: var(--accent-color);
-                border:none; padding: 1rem;">+ Generar OC</button>
-              </a>
-            </div>
+            
+  
             
             <br>
             <div class="container">
