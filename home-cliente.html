@@ -122,11 +122,18 @@
 
       <!-- Section Title -->
       
-      <form class="form-inline my-2 my-lg-0" style="text-align: center;">
-        <input style="width: 40%; margin: auto;"  class="form-control mr-sm-2" type="search" placeholder="Buscar Producto" aria-label="Search">
-        <br>
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-      </form>
+      <div class="form-container">
+        <form class="form-inline my-2 my-lg-0" style="text-align: center;">
+          <input id="product-search" class="form-control mr-sm-2" style="width: 40%; margin: auto;" type="search" placeholder="Buscar Producto" aria-label="Search">
+          <div id="autocomplete-container" class="autocomplete-suggestions"></div>
+          <div class="btn-container">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+          </div>
+        </form>
+        
+      </div>
+      
+      
       <div class="container" data-aos="fade-up">
         <section id="team" class="team section">
 
@@ -419,6 +426,40 @@
         confirmButtonText: 'OK'
       });
     }
+
+    $(document).ready(function() {
+    const productos = [
+      { nombre: 'Producto 1', imagen: 'assets/img/tuerca_remachable.jpg' },
+      { nombre: 'Producto 2', imagen: 'assets/img/tuerca_remachable.jpg' },
+      { nombre: 'Producto 3', imagen: 'ruta_a_la_imagen_3.jpg' }
+      // Añadir más productos aquí
+    ];
+
+    $('#product-search').on('input', function() {
+      const searchTerm = $(this).val().toLowerCase();
+      $('#autocomplete-container').empty();
+
+      if (searchTerm.length > 0) {
+        const filteredProducts = productos.filter(producto => 
+          producto.nombre.toLowerCase().includes(searchTerm)
+        );
+
+        filteredProducts.forEach(producto => {
+          $('#autocomplete-container').append(`
+            <div class="autocomplete-suggestion" onclick="selectProduct('${producto.nombre}')">
+              <img src="${producto.imagen}" alt="${producto.nombre}">
+              <span>${producto.nombre}</span>
+            </div>
+          `);
+        });
+      }
+    });
+  });
+
+  function selectProduct(nombre) {
+    $('#product-search').val(nombre);
+    $('#autocomplete-container').empty();
+  }
   </script>
 
 </body>
