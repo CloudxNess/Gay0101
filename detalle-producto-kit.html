@@ -15,7 +15,9 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -43,9 +45,12 @@
     <div class="topbar d-flex align-items-center">
       <div class="container d-flex justify-content-center justify-content-md-between">
         <div class="contact-info d-flex align-items-center">
-          <i class="bi bi-globe2 d-flex align-items-center "><a href="mailto:contact@example.com">Status : Online 127.0.0.1:5500   </a></i>
-          <i class="bi bi-globe2 d-flex align-items-center ms-2 "><a href="mailto:contact@example.com">Inactividad: 0 min   </a></i>
-          <i class="bi bi-envelope d-flex align-items-center ms-2"><a href="mailto:contact@example.com">contact@example.com</a></i>
+          <i class="bi bi-globe2 d-flex align-items-center "><a href="mailto:contact@example.com">Status : Online
+              127.0.0.1:5500 </a></i>
+          <i class="bi bi-globe2 d-flex align-items-center ms-2 "><a href="mailto:contact@example.com">Inactividad: 0
+              min </a></i>
+          <i class="bi bi-envelope d-flex align-items-center ms-2"><a
+              href="mailto:contact@example.com">contact@example.com</a></i>
           <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i>
         </div>
         <div class="social-links d-none d-md-flex align-items-center">
@@ -69,14 +74,15 @@
         <nav id="navmenu" class="navmenu">
           <ul>
             <li><a href="opciones.html" class="">Opciones</a></li>
-            <li><a href="#hero" class="" onclick="alertar('Cerrando Sesion en Todos Los Dispositivos')">Cerrar Sesion</a></li>
+            <li><a href="#hero" class="" onclick="alertar('Cerrando Sesion en Todos Los Dispositivos')">Cerrar
+                Sesion</a></li>
             <script type="text/javascript">
-                function alertar(texto) {
-                   alert(texto);
-                   location.href = "login.html";
-                }
+              function alertar(texto) {
+                alert(texto);
+                location.href = "login.html";
+              }
             </script>
-             <i class="bi bi-search d-flex align-items-center ms-2"><a href="assets/img/lupa.png">Activar Zoom </a></i>
+            <i class="bi bi-search d-flex align-items-center ms-2"><a href="assets/img/lupa.png">Activar Zoom </a></i>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
@@ -94,10 +100,10 @@
         <nav class="breadcrumbs">
           <ol>
             <li><a href="home-inventario.html">Home</a></li>
-            <li class="current">Detalle Kit</li>
+            <li class="current">Editar Kit</li>
           </ol>
         </nav>
-        <h1>Detalle Kit</h1>
+        <h1>Editar Kit</h1>
       </div>
     </div><!-- End Page Title -->
 
@@ -109,72 +115,56 @@
         <div class="row gy-4">
 
           <div class="col-lg-8">
-            <div class="portfolio-details-slider swiper">
 
-              <script type="application/json" class="swiper-config">
-                {
-                  "loop": true,
-                  "speed": 600,
-                  "autoplay": {
-                    "delay": 5000
-                  },
-                  "slidesPerView": "auto",
-                  "pagination": {
-                    "el": ".swiper-pagination",
-                    "type": "bullets",
-                    "clickable": true
-                  }
-                }
-              </script>
-
-              <div class="swiper-wrapper align-items-center">
-
-                <div class="swiper-slide">
-                  <img src="assets/img/kit.jpg" alt="">
-                </div>
-
-
-              </div>
-              <div class="swiper-pagination"></div>
+          <div id="editForm">
+            <div class="form-group">
+              <label for="productName">Nombre del Producto:</label>
+              <input type="text" id="productName" name="productName" value="Nombre del Producto 1">
             </div>
-          </div>
-
-          <div class="col-lg-4">
-            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-              <h3>Nombre del Producto 1</h3> 
-              <ul>
-                <li><strong>ID</strong>: 123456</li>
-                <li><strong>Ubicación</strong>: A1-F1</li>
-                <li><strong>Stock</strong>: 1</li>
-                <li><strong>Fecha de Ingreso</strong>: 01 Marzo, 2020</li>
-                <li><strong>Fecha de Proyecto</strong>: 01 Marzo, 2020</li>
-          
-              </ul>
-              <hr>
-              <h3>Contenidos del Kit</h3>
-              <li><strong>Tuerca</strong>: 20</li>
-              <li><strong>Clavos</strong>: 23</li>
-              <li><strong>Rodamientos</strong>: 23</li>
-              <li><strong>Acoples</strong>: 23</li>
-              <li><strong>Fierro</strong>: 22</li>
-             
-              
+            <div class="form-group">
+              <label for="productID">ID:</label>
+              <input type="text" id="productID" name="productID" value="123456">
             </div>
-            <div style="text-align: center; margin-top: 20px;">
-              <a href="detalle-producto-kit.html" style="text-decoration: none;">
-                <button id="editButton" style="color: var(--contrast-color); background: var(--accent-color); border: none; padding: 1rem;">Editar Producto</button>
-              </a>
+            <div class="form-group">
+              <label for="location">Ubicación:</label>
+              <input type="text" id="location" name="location" value="A1-F1">
+            </div>
+            <div class="form-group">
+              <label for="location">Fecha de Ingreso:</label>
+              <input type="text" id="location" name="location" value="01 Marzo, 2020">
+            </div>
+            <div class="form-group">
+              <label for="location">Fecha de Proyecto:</label>
+              <input type="text" id="location" name="location" value="01 Marzo, 2020">
             </div>
             <hr>
-            <br>
-            <div style="text-align: center;">
-              <a href="detalle-seguimiento.html" title="More Details" class="details-link">
-                <button style=" color: var(--contrast-color);
-                background: var(--accent-color);
-                border:none; padding: 1rem;">Seguimiento de kit </button>
-              
+            <h1>Contenidos del Kit</h1>
+            <div class="form-group">
+              <label for="location">Tuerca:</label>
+              <input type="text" id="location" name="location" value="20">
             </div>
-          </div>
+            <div class="form-group">
+              <label for="location">Clavos:</label>
+              <input type="text" id="location" name="location" value="23">
+            </div>
+            <div class="form-group">
+              <label for="location">Rodamientos:</label>
+              <input type="text" id="location" name="location" value="23">
+            </div>
+            <div class="form-group">
+              <label for="location">Acoples:</label>
+              <input type="text" id="location" name="location" value="23">
+            </div>
+            <div class="form-group">
+              <label for="location">Fierro:</label>
+              <input type="text" id="location" name="location" value="22">
+            </div>
+            <!-- Add more fields as needed -->
+            <div style="text-align: center; margin-top: 20px;">
+              <a href="detalle-kit.html">
+                <button id="save" style="color: var(--contrast-color); background: var(--accent-color); border: none; padding: 1rem;">Guardar</button>
+              </a>
+            </div>
 
         </div>
 
@@ -243,7 +233,8 @@
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Maestranzas Unidos</strong> <span>Todos los derechos reservados</span></p>
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Maestranzas Unidos</strong> <span>Todos los derechos
+          reservados</span></p>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you've purchased the pro version. -->
@@ -257,7 +248,8 @@
 
 
   <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
 
   <!-- Preloader -->
   <div id="preloader"></div>
@@ -274,7 +266,7 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
   <script>
-    document.getElementById("configIcon").addEventListener("click", function(event) {
+    document.getElementById("configIcon").addEventListener("click", function (event) {
       event.preventDefault();
       var popup = document.getElementById("popupForm");
       if (popup.style.display === "none" || popup.style.display === "") {
