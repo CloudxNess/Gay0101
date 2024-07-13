@@ -11,7 +11,7 @@
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
+  
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
@@ -27,7 +27,7 @@
 
   <link rel="stylesheet" href="assets/css/magnify.css">
  
-
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
@@ -156,6 +156,16 @@
                         background: var(--accent-color);
                         border:none; padding: 0.5rem;">Ver producto</button>
                       </a>  
+                      <a href="#" title="More Details" class="details-link">
+                        <button id="qrButton" style="width: 40%; color: var(--contrast-color) ;
+                        background: var(--accent-color);
+                        border:none; padding: 0.5rem;">Generar Qr</button>
+                      </a>  
+                      
+                      
+                      <div id="qrModal" class="qr-container">
+                        <img id="qrImage" src="assets/img/QR_code.png" alt="QR Code">
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -175,6 +185,16 @@
                         background: var(--accent-color);
                         border:none; padding: 0.5rem;">Ver producto</button>
                       </a>  
+                      <a href="#" title="More Details" class="details-link">
+                        <button id="qrButton" style="width: 40%; color: var(--contrast-color) ;
+                        background: var(--accent-color);
+                        border:none; padding: 0.5rem;">Generar Qr</button>
+                      </a>  
+                      
+                      
+                      <div id="qrModal" class="qr-container">
+                        <img id="qrImage" src="assets/img/QR_code.png" alt="QR Code">
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -194,6 +214,11 @@
                         background: var(--accent-color);
                         border:none; padding: 0.5rem;">Ver producto</button>
                       </a>  
+                      <a href="#" title="More Details" class="details-link">
+                        <button id="qrButton" style="width: 40%; color: var(--contrast-color) ;
+                        background: var(--accent-color);
+                        border:none; padding: 0.5rem;">Generar Qr</button>
+                      </a> 
                     </div>
                   </div>
                 </div>
@@ -370,8 +395,49 @@
     $(document).ready(function() {
       $('.zoom').magnify();
     });
+
+    document.addEventListener('DOMContentLoaded', function() {
+  var qrButton = document.getElementById('qrButton');
+  var qrModal = document.getElementById('qrModal');
+  var qrImage = document.getElementById('qrImage');
+
+  qrButton.addEventListener('click', function(event) {
+    event.preventDefault();
+    qrModal.style.display = 'block';
+
+    setTimeout(function() {
+      qrModal.style.display = 'none';
+    }, 3000); 
+  });
+});
+
     </script>
 
+<style>
+  
+  .qr-container {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    z-index: 9999;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  
+  .details-link button {
+    width: 40%;
+    color: white;
+    background: blue;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+  }
+</style>
+    
 
 </body>
 
