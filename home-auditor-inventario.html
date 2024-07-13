@@ -26,6 +26,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
   <link rel="stylesheet" href="assets/css/magnify.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
  
 
 
@@ -149,15 +151,16 @@
             </a>
             <hr>
             <div>
-              <a href="" title="More Details" class="details-link">
-                <button style=" color: var(--contrast-color);
-                background: rgb(0, 75, 0);
-                border:none; padding: 1rem;"><strong><i class="bi bi-file-earmark-arrow-down"> </i> Descargar producto más vendido</strong> </button>
+              <a href="#" title="More Details" class="details-link">
+                <button id="download-button" style="color: var(--contrast-color); background: rgb(0, 75, 0); border: none; padding: 1rem;">
+                  <strong><i class="bi bi-file-earmark-arrow-down"></i> Descargar producto más vendido</strong>
+                </button>
               </a>
               <a href="" title="More Details" class="details-link">
-                <button style=" color: black;
-                background: rgb(255, 204, 110);
-                border:none; padding: 1rem;"><strong> <i class="bi bi-file-earmark-arrow-down"> </i> Descargar producto menos vendido</strong></button>
+  
+                <button id="download-button-2" style="color: var(--contrast-color); background: rgb(255, 204, 110); border: none; padding: 1rem;">
+                 Descargar producto menos vendido</strong></button>
+               
               </a>
             </div>
             <hr>
@@ -526,8 +529,53 @@
     $(document).ready(function() {
       $('.zoom').magnify();
     });
-    </script>
+    
+    document.getElementById('download-button').addEventListener('click', function (event) {
+      event.preventDefault(); 
+  
+     
+      Swal.fire({
+        title: 'Descargando reporte de producto más vendido',
+        html: '<div class="spinner-border" role="status"><span class="sr-only"></span></div>',
+        showConfirmButton: false,
+        allowOutsideClick: false,
+        onBeforeOpen: () => {
+          Swal.showLoading();
+        }
+      });
+  
+      
+      setTimeout(function () {
+       
+        Swal.close();
+  
+       
+      }, 3000);
+    });
 
+    document.getElementById('download-button-2').addEventListener('click', function (event) {
+      event.preventDefault(); 
+  
+     
+      Swal.fire({
+        title: 'Descargando reporte de producto menos vendido',
+        html: '<div class="spinner-border" role="status"><span class="sr-only"></span></div>',
+        showConfirmButton: false,
+        allowOutsideClick: false,
+        onBeforeOpen: () => {
+          Swal.showLoading();
+        }
+      });
+  
+      
+      setTimeout(function () {
+       
+        Swal.close();
+  
+       
+      }, 3000);
+    });
+  </script>
 
 </body>
 
